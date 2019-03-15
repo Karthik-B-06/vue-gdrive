@@ -63,7 +63,7 @@ export default {
     },
 
     handleAuthResult(authResult) {
-      console.log("Handle Auth result", authResult);
+      console.log("Handle Auth result");
       if (authResult && !authResult.error) {
         this.oauthToken = authResult.access_token;
         this.createPicker();
@@ -72,7 +72,7 @@ export default {
 
     // Create and render a Picker object for picking user Photos.
     createPicker() {
-      console.log("Create Picker", google.picker);
+      console.log("Create Picker");
       if (this.pickerApiLoaded && this.oauthToken) {
         var picker = new google.picker.PickerBuilder()
           .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
@@ -85,7 +85,7 @@ export default {
       }
     },
     async pickerCallback(data) {
-      console.log("PickerCallback", data);
+      console.log("PickerCallback Files : ", data.docs);
       var url = "nothing";
       var name = "nothing";
       if (data[google.picker.Response.ACTION] === google.picker.Action.PICKED) {
@@ -110,9 +110,6 @@ export default {
           attachment.thumb = null;
           attachment.thumb_list = null;
           attachments.push(attachment);
-          console.log(
-            docs[i].mimeType.substring(docs[i].mimeType.lastIndexOf(".") + 1)
-          );
         }
         this.tempAttachments = [...attachments];
       }
