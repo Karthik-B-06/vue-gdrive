@@ -4,13 +4,14 @@
       <li v-for="tempAttachment in tempAttachments" :key="tempAttachment._id">
         <div class="file-details">
           <div class="file-name display-flex align-center">
-            <p class="" ref="attachmentTitle">{{ tempAttachment.title }}</p>
+            <p class ref="attachmentTitle">{{ tempAttachment.title }}</p>
           </div>
           <div class="file-info">
-            <span class="uploaded-date"> {{ tempAttachment.size }} bytes </span>
-            <span v-if="checkProgress(tempAttachment)" class="upload-prgress">
-              {{ `${tempAttachment.progress} %` }}
-            </span>
+            <span class="uploaded-date">{{ tempAttachment.size }} bytes</span>
+            <span
+              v-if="checkProgress(tempAttachment)"
+              class="upload-prgress"
+            >{{ `${tempAttachment.progress} %` }}</span>
           </div>
         </div>
       </li>
@@ -28,9 +29,6 @@ export default {
   },
   props: {
     tempAttachments: {
-      type: Array
-    },
-    attachments: {
       type: Array
     }
   }

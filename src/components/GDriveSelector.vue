@@ -1,17 +1,15 @@
 <template>
   <div class="container">
     <div class="file-selector">
-      <figure><UploadIcon /></figure>
-      Select Files from Google Drive
-      <p><span>Authenticate with Google Drive</span></p>
-      <button type="button" @click="driveIconClicked();">
-        Connect to Google Drive
-      </button>
+      <figure>
+        <UploadIcon/>
+      </figure>Select Files from Google Drive
+      <p>
+        <span>Authenticate with Google Drive</span>
+      </p>
+      <button type="button" @click="driveIconClicked();">Connect to Google Drive</button>
     </div>
-    <AttachmentList
-      :tempAttachments="getTempAttachments"
-      :attachments="getAttachments"
-    />
+    <AttachmentList :tempAttachments="getTempAttachments"/>
   </div>
 </template>
 
@@ -115,6 +113,7 @@ export default {
             docs[i].mimeType.substring(docs[i].mimeType.lastIndexOf(".") + 1)
           );
         }
+        this.tempAttachments = [...attachments];
       }
     }
   },
