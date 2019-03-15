@@ -25,7 +25,7 @@ export default {
       pickerApiLoaded: false,
       developerKey: "AIzaSyBaQZlYTmndQYCcdlkHoVtBzpZYandwaaA",
       clientId:
-        "841376049567-r7mib421nr5uf0k0m1kgvint85cm0gu2.apps.googleusercontent.com",
+        "841376049567-1jtrqmja7u5tnjfko40a47hsblqig8hs.apps.googleusercontent.com",
       scope: "https://www.googleapis.com/auth/drive.readonly",
       oauthToken: null
     };
