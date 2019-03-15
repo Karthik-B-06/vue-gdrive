@@ -8,10 +8,7 @@
           </div>
           <div class="file-info">
             <span class="uploaded-date">{{ tempAttachment.size }} bytes</span>
-            <span
-              v-if="checkProgress(tempAttachment)"
-              class="upload-prgress"
-            >{{ `${tempAttachment.progress} %` }}</span>
+            <span v-if="checkProgress(tempAttachment)" class="upload-prgress"></span>
           </div>
         </div>
       </li>

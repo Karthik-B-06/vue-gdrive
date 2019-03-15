@@ -105,6 +105,7 @@ export default {
           attachment.extension =
             "." +
             docs[i].mimeType.substring(docs[i].mimeType.lastIndexOf(".") + 1);
+          attachment.size = docs[i].sizeBytes;
           attachment.user = JSON.parse(localStorage.getItem("user"));
           attachment.thumb = null;
           attachment.thumb_list = null;
