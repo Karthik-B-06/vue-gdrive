@@ -7,7 +7,7 @@
             <p class ref="attachmentTitle">{{ tempAttachment.title }}</p>
           </div>
           <div class="file-info">
-            <span class="uploaded-date">{{ tempAttachment.size }} bytes</span>
+            <span class="uploaded-date">File Size : {{ tempAttachment.size }} bytes</span>
             <span v-if="checkProgress(tempAttachment)" class="upload-prgress"></span>
           </div>
         </div>
