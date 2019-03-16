@@ -85,7 +85,7 @@ export default {
       }
     },
     async pickerCallback(data) {
-      console.log("PickerCallback Files : ", data.docs);
+      console.log("PickerCallback Files : ", data);
       var url = "nothing";
       var name = "nothing";
       if (data[google.picker.Response.ACTION] === google.picker.Action.PICKED) {
@@ -105,6 +105,7 @@ export default {
           attachment.extension =
             "." +
             docs[i].mimeType.substring(docs[i].mimeType.lastIndexOf(".") + 1);
+          attachment.iconURL = docs[i].iconUrl;
           attachment.size = docs[i].sizeBytes;
           attachment.user = JSON.parse(localStorage.getItem("user"));
           attachment.thumb = null;
@@ -113,6 +114,8 @@ export default {
         }
         this.tempAttachments = [...attachments];
       }
+      this.oauthToken = null;
+      this.pickerApiLoaded = false;
     }
   },
   computed: {
