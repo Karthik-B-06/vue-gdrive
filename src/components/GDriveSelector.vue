@@ -23,8 +23,9 @@ export default {
       tempAttachments: [],
       attachments: [],
       pickerApiLoaded: false,
-      developerKey: " <-- YOUR API KEY --> ",
-      clientId: "<-- YOUR OAUTH CLIENT ID --> ",
+      developerKey: "AIzaSyBaQZlYTmndQYCcdlkHoVtBzpZYandwaaA",
+      clientId:
+        "841376049567-1jtrqmja7u5tnjfko40a47hsblqig8hs.apps.googleusercontent.com",
       scope: "https://www.googleapis.com/auth/drive.readonly",
       oauthToken: null
     };
